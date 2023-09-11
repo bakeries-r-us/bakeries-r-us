@@ -1,24 +1,15 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import {Game, AUTO, Scene } from 'phaser';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const game = new Game({
+    type: AUTO,
+    width: window.innerWidth,
+    height: window. innerHeight
+});
 
-setupCounter(document.querySelector('#counter'))
+class Map extends Scene {
+    create() {
+        this.add.rectangle(200, 200, 148, 148, 0xFF0000);
+    }
+}
+
+game.scene.add('Map', Map, true);
