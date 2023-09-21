@@ -1,15 +1,10 @@
 import {Game, AUTO, Scene } from 'phaser';
+import Map from "./scenes/map.js";
 
 const game = new Game({
     type: AUTO,
     width: window.innerWidth,
-    height: window. innerHeight
+    height: window. innerHeight,
+    parent: 'game',
+    scene: [Map]
 });
-
-class Map extends Scene {
-    create() {
-        this.add.rectangle(200, 200, 148, 148, 0xFF0000);
-    }
-}
-
-game.scene.add('Map', Map, true);
