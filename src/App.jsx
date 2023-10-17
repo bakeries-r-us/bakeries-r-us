@@ -1,20 +1,23 @@
 import 'modern-normalize/modern-normalize.css';
-import './App.css'
+import './App.css';
+
+import {useState} from "react";
+
+import Level01 from "./levels/Level01.jsx";
+import Level02 from "./levels/Level02.jsx";
 
 
 function App() {
 
+    const [showLevel2, setShowLevel2] = useState(false);
+  function acceptLevel1(accept) {
+    setShowLevel2(accept);
+  }
+
   return (
     <>
-    <h1>Bakeries-R-Us</h1>
-    <p>Bakeries-R-Us has given you an irresistible offer. They want you as their new CEO. Why you? Well, you're not
-        sure, since you can't bake, but you shouldn't let a good opportunity go. In fact, they assure you that there
-        will be no baking involved. All you have to do is ensure the bakery has enough ingredients to sell enough bread
-        to make a profit.</p>
-
-    <p>Do you accept the challenge of becoming CEO? You will have to within a year turn a budget of one million
-        dollars into a handsome profit. If you do, you will get a big bonus. If you don't, you will be demoted to
-        unemployed.</p>
+        <Level01 sendMessage={acceptLevel1}></Level01>
+        { showLevel2 ? <Level02></Level02> : '' }
     </>
   )
 }
