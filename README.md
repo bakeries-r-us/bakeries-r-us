@@ -15,4 +15,3 @@
 - [ ] Create ability to order supplies
 - [ ] Create ability for bakery to receive and store supplies
 - [ ] Create mechanism to transform supplies into bread
-- [ ] Create ability to
