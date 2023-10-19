@@ -1,0 +1,61 @@
+:root {
+    --primary: #FFADAD;
+    --secondary: #FFD6A5;
+    --tertiary: #FDFFB6;
+    --quarternary: #caffbf;
+    --dark: #0B1018;
+    --light: #FFF;
+}
+body {
+    background-color: var(--light);
+    color: var(--dark);
+    font-size: 1.1rem;
+}
+h1 {
+    text-align: center;
+}
+p {
+    text-indent: 1rem;
+    margin: 1rem;
+}
+input[type="radio"] {
+    appearance: none;
+    background-color: var(--tertiary);
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--primary);
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+.form-control {
+    font-family: system-ui, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    border: 2px dashed var(--primary);
+    padding: 1rem;
+    background-color: var(--tertiary);
+}
+

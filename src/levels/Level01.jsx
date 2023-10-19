@@ -1,4 +1,5 @@
 import {useState} from "react";
+import PropTypes from "prop-types";
 function Level01({sendMessage}) {
     const [isButtonDisabled, setButtonDisabled] = useState(false);
     function onChangeValue(event) {
@@ -20,12 +21,16 @@ function Level01({sendMessage}) {
 
             <p>Do you accept the challenge of becoming CEO?</p>
 
-            <div onChange={onChangeValue} >
+            <p className="form-control" onChange={onChangeValue} >
                 <input type="radio" name="continue" value="Yes" disabled={isButtonDisabled}/> Yes
                 <input type="radio" name="continue" value="No" disabled={isButtonDisabled}/> No
-            </div>
+            </p>
         </>
     )
+}
+
+Level01.propTypes = {
+    sendMessage: PropTypes.func
 }
 
 export default Level01;
