@@ -42,9 +42,19 @@ input[type="radio"]::before {
     box-shadow: inset 1em 1em var(--primary);
 }
 
+input[type="radio"]:disabled {
+    border: none;
+}
+
+input[type="radio"]:disabled:checked {
+    border: 0.15em solid currentColor;
+}
+
 input[type="radio"]:checked::before {
     transform: scale(1);
 }
+
+
 
 .form-control {
     font-family: system-ui, sans-serif;
